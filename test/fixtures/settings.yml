@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ems_login: MyString
+  ems_password: MyString
+  sender_address: MyText
+  content: MyString
+
+two:
+  ems_login: MyString
+  ems_password: MyString
+  sender_address: MyText
+  content: MyString
