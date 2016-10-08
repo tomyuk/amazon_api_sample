@@ -1,0 +1,9 @@
+- content_for :page_title do
+  %span.page-mark.users
+    %img{src: image_path('users.png')}
+  %h1 #{t('views.' + controller_fullname + '.page_title')}
+
+%ul
+  %li controller: #{controller_name} - (#{controller_fullname})
+  %li action: #{action_name}
+  %li template: application/show.html.haml

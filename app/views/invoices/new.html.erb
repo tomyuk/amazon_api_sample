@@ -1,5 +1,26 @@
-<h1>New Invoice</h1>
+<h1>送り状作成</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', invoices_path %>
+<%= form_for(@invoice) do |f| %>
+  <table id="invoices-new-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Order ID</th>
+        <th>Shop</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% 20.times do |ix| %>
+        <tr>
+          <%= render 'form', f: f, ix: ix %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4 actions"><%= f.submit %></div>
+  <div class="col-sm-4"></div>
+<% end %>

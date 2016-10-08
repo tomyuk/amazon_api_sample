@@ -1,17 +1,5 @@
-<%= form_for(@invoice) do |f| %>
-  <% if @invoice.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
-
-      <ul>
-      <% @invoice.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<% p "(#{ix}) #{f}" %>
+<input type="hidden" value="<%= ix %>" />
+<td class="index"><%= ix %></td>
+<td class="order_id"><%= f.text_field :order_id, size: 30 %></td>
+<td class="shop"><%= f.select :shop, {"AMAZON USA": "amazon_usa", "AMAZON CA": "amazon_ca"} %></td>

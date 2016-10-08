@@ -1,0 +1,18 @@
+<h1>送信履歴</h1>
+
+<table id="order_history-table">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

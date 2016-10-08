@@ -1,15 +1,36 @@
 <%= form_for(@setting) do |f| %>
   <% if @setting.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@setting.errors.count, "error") %> prohibited this setting from being saved:</h2>
+      <h2><%= @setting.errors.count %>のエラーにより保存できませんでした:</h2>
 
       <ul>
-      <% @setting.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @setting.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
+
+  <div class ="form-horizontal">
+    <div class="form-group">
+      <%= f.label :ems_login, for: "setting_ems_login", class: "col-sm-2 control-label" %>
+      <div class="col-sm-4">
+        <%= f.email_field :ems_login, class: "form-control", autofocus: true %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :ems_password, for: "setting_ems_password", class: "col-sm-2 control-label" %>
+      <div class="col-sm-4">
+        <%= f.text_field :ems_password, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :content, for: "setting_content", class: "col-sm-2 control-label" %>
+      <div class="col-sm-4">
+        <%= f.text_field :content, class: "form-control" %>
+      </div>
+    </div>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
